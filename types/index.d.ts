@@ -222,6 +222,7 @@ declare interface SiderbarProps {
   user: User;
 }
 
+
 declare interface RecentTransactionsProps {
   accounts: Account[];
   transactions: Transaction[];
