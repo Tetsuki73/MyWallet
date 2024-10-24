@@ -19,7 +19,7 @@ import {
 import CustomInput from "@/components/CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
-import router from "next/router";
+import { signIn, signUp } from "@/lib/actions/user.actions";
 
 // Main function
 const AuthForm = ({ type }: { type: string }) => {
@@ -44,9 +44,9 @@ const AuthForm = ({ type }: { type: string }) => {
     try {
         //  sign-up with appWrite   create a plaid token
         if(type === 'sign-up'){
-            // const newUser = await signUp(data)
+            const newUser = await signUp(data)
             
-            // setUser(newUser);
+            setUser(newUser);
         }
 
         if(type === 'sign-in'){
@@ -54,7 +54,7 @@ const AuthForm = ({ type }: { type: string }) => {
             //     email: data.email,
             //     password: data.password,
             // })
-
+            
             // if(response){
             //     router.push('/')
             // }
